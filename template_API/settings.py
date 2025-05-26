@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'corsheaders',
+    'drf_spectacular',
     'rest_framework',
     'rest_framework.authtoken',
     'api',
@@ -90,6 +91,7 @@ WSGI_APPLICATION = 'template_API.wsgi.application'
 # }
 
 REST_FRAMEWORK = {
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework.authentication.TokenAuthentication',
         # outras autenticações se quiser...

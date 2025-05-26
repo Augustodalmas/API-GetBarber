@@ -1,6 +1,9 @@
 from django.urls import path, include
-from api.views import HelloWorldView
+from .views import barbershopCreateListView, serviceCreateListView
 
 urlpatterns = [
-    path('barbershop/hello', HelloWorldView.as_view()),
+    path('barbershop/', barbershopCreateListView.as_view(),
+         name='create-list-barbershop'),
+    path('barbershop/service/', serviceCreateListView.as_view(),
+         name='create-list-service'),
 ]

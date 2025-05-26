@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import usuarioVisitante
+from .models import usuarioVisitante, employee
 
 
 class registerSerializer(serializers.ModelSerializer):
@@ -23,3 +23,9 @@ class perfilSerializer(serializers.ModelSerializer):
     class Meta:
         model = usuarioVisitante
         fields = ['id', 'username', 'email', 'telefone', 'historico']
+
+
+class employeeSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = employee
+        fields = "__all__"

@@ -1,3 +1,7 @@
 from django.contrib import admin
+from .models import Barbershop
 
-# Register your models here.
+
+@admin.register(Barbershop)
+class adminAgenda(admin.ModelAdmin):
+    list_display = ('name', 'CNPJ')

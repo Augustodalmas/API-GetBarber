@@ -2,10 +2,11 @@ from django.shortcuts import render
 from django.contrib.auth import authenticate
 from rest_framework.response import Response
 from rest_framework.authtoken.models import Token
-from rest_framework.permissions import IsAuthenticated, AllowAny
+from rest_framework.permissions import IsAuthenticated
 from rest_framework import status, generics
 from rest_framework.views import APIView
-from .serializer import registerSerializer, perfilSerializer
+from .serializer import registerSerializer, perfilSerializer, employeeSerializer
+from .models import employee
 
 
 class registerView(generics.CreateAPIView):
@@ -62,3 +63,13 @@ class perfilView(APIView):
         user = request.user
         serializer = perfilSerializer(user)
         return Response(serializer.data)
+
+
+class employeeView(generics.ListCreateAPIView):
+    queryset = employee.objects.all()
+    serializer_class = employeeSerializer
+
+
+class employeeUpdateView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = employee.objects.all()
+    serializer_class = employeeSerializer
