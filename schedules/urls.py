@@ -1,6 +1,7 @@
 from django.urls import path, include
-from api.views import HelloWorldView
+from .views import agendaCriarListarView
 
 urlpatterns = [
-    path('schedules/hello', HelloWorldView.as_view()),
+    path('schedules/', agendaCriarListarView.as_view(),
+         name='create-list-schedule'),
 ]

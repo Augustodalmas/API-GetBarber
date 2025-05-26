@@ -1,3 +1,8 @@
-from django.shortcuts import render
+from .models import agenda
+from rest_framework import generics
+from .serializer import AgendaSerializer
 
-# Create your views here.
+
+class agendaCriarListarView(generics.ListCreateAPIView):
+    queryset = agenda.objects.all()
+    serializer_class = AgendaSerializer
