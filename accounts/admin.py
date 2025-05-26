@@ -1,3 +1,9 @@
 from django.contrib import admin
+from accounts.models import usuarioVisitante
 
-# Register your models here.
+
+class usuarioVisitanteAdministracao(admin.ModelAdmin):
+    list_display = ('username', 'telefone')
+
+
+admin.site.register(usuarioVisitante, usuarioVisitanteAdministracao)
