@@ -1,4 +1,4 @@
-
+![Badge em Desenvolvimento](http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge)<br><br>
 # ✂️ GetBarber API
 
 API REST desenvolvida em **Django + Django REST Framework** para gerenciamento de barbearias, serviços, agendamentos e usuários.
